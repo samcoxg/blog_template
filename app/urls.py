@@ -6,5 +6,6 @@ app_name = 'app'
 
 
 urlpatterns = [
-path('', HomeListView.as_view(), name='home')
+path('', HomeListView.as_view(), name='home'),
+path('accounts/', include("django.contrib.auth.urls")),
 ]

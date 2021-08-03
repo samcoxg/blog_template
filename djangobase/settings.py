@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mdeditor',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,7 @@ STATIC_URL = '/static/'
 # CUSTOM settings
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = "/"
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+import os
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'

@@ -9,4 +9,4 @@ from django.views.generic import ListView
 class HomeListView(ListView):
     template_name = 'app/index.html'
     model = Post
-    
+    import markdown    

@@ -1,6 +1,8 @@
     
 {% extends "../base.html" %}
 {% block content %}
+{% load markdown_extras %}
+
     <style>p, h1, body {
         color: #111;
     font-family: Cern,Helvetica,Arial,sans-serif;
@@ -8,12 +10,14 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     }</style>
-    <div class="container">
+
+    <div class="container" style="background-color:#ebf2fc;" markdown=1>
         <h1>Latest</h1>
         {% for obj in object_list %}
-        <h5>{{ obj.title }}</h5>
-        <p>{{ obj.preview }}</p>
+        <p>{{ obj.content  | markdown | safe}}</p>
         <p>{{ obj.created_date }}</p>
         {% endfor %}
     </div>
+
+</div>
 {% endblock %}
